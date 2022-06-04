@@ -15,17 +15,13 @@ pub extern "C" fn new_opaque() -> *mut OnlyRustUnderstandsMe {
 
 #[no_mangle]
 pub extern "C" fn free_opaque(value: *mut OnlyRustUnderstandsMe) -> i32 {
-    if !value.is_null() {
-        unsafe {
-            match opaque_pointer::own_back(value) {
-                Ok(_) => (),
-                Err(_) => return -1,
-            }
+    unsafe {
+        match opaque_pointer::own_back(value) {
+            Ok(_) => (),
+            Err(_) => return -1,
         }
-        0
-    } else {
-        -1
     }
+    0
 }
 
 #[no_mangle]
