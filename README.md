@@ -10,6 +10,11 @@ git submodule update --init
 
 ## Building
 
+### Requirements
+
+* [rust](https://www.rust-lang.org/tools/install)
+* A c++ compiler.
+
 ### GNU make
 
 ```
