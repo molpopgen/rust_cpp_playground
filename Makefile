@@ -4,7 +4,7 @@ all: test
 test: test.o
 	g++ -c test.cc
 
-test.o: test.cc target/debug/librust_cpp_playground.a rustlib.h
+test.o: test.cc target/debug/librust_cpp_playground.a
 
 target/debug/librust_cpp_playground.a: src/lib.rs
 	cargo build
