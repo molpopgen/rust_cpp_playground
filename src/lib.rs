@@ -47,7 +47,6 @@ pub unsafe extern "C" fn get_value(s: *const OnlyRustUnderstandsMe) -> *const i3
 #[no_mangle]
 pub unsafe extern "C" fn get_integer_range(s: *const OnlyRustUnderstandsMe) -> IntegerRange {
     let beg = (*s).integers.as_ptr();
-    //let end = beg.offset((*s).integers.len() as isize);
     let end = beg.add((*s).integers.len());
 
     IntegerRange { beg, end }
